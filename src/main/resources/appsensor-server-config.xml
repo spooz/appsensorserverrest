@@ -31,7 +31,7 @@
     </correlation-config>-->
 
     <detection-points>
-        <detection-point>
+<!--        <detection-point>
             <category>Input Validation</category>
             <id>IE1</id>
             <threshold>
@@ -106,13 +106,13 @@
                     <interval unit="minutes">33</interval>
                 </response>
             </responses>
-        </detection-point>
+        </detection-point>-->
         <detection-point>
             <category>Authentication</category>
-            <id>AE4</id>
+            <id>AE3</id>
             <threshold>
-                <count>8</count>
-                <interval unit="seconds">50</interval>
+                <count>5</count>
+                <interval unit="seconds">30</interval>
             </threshold>
             <responses>
                 <response>
@@ -124,16 +124,49 @@
                 <response>
                     <action>disableUser</action>
                 </response>
+            </responses>
+        </detection-point>
+        <detection-point>
+            <category>System Trend</category>
+            <id>STE1</id>
+            <threshold>
+                <count>10</count>
+                <interval unit="seconds">30</interval>
+            </threshold>
+            <responses>
                 <response>
-                    <action>disableComponentForSpecificUser</action>
-                    <interval unit="minutes">34</interval>
-                </response>
-                <response>
-                    <action>disableComponentForAllUsers</action>
-                    <interval unit="minutes">14</interval>
+                    <action>log</action>
                 </response>
             </responses>
         </detection-point>
+        <detection-point>
+            <category>System Trend</category>
+            <id>STE2</id>
+            <threshold>
+                <count>10</count>
+                <interval unit="seconds">30</interval>
+            </threshold>
+            <responses>
+                <response>
+                    <action>log</action>
+                </response>
+            </responses>
+        </detection-point>
+
+        <detection-point>
+            <category>Input Validation</category>
+            <id>IE1</id>
+            <threshold>
+                <count>1</count>
+                <interval unit="seconds">1</interval>
+            </threshold>
+            <responses>
+                <response>
+                    <action>disableUser</action>
+                </response>
+            </responses>
+        </detection-point>
+
     </detection-points>
 
 </appsensor-server-config>
