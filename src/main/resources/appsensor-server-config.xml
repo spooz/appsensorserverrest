@@ -3,7 +3,7 @@
 
     <client-application-identification-header-name>X-Appsensor-Client-Application-Name2</client-application-identification-header-name>
 
-  <!--  <geolocation enabled="true" databasePath="src/main/resources/GeoLite2-City.mmdb" />-->
+    <!--  <geolocation enabled="true" databasePath="src/main/resources/GeoLite2-City.mmdb" />-->
 
     <client-applications>
         <client-application>
@@ -17,59 +17,26 @@
         </client-application>
     </client-applications>
 
-  <!--  <correlation-config>
-        <correlated-client-set>
-            <client-application-name>A</client-application-name>
-            <client-application-name>B</client-application-name>
-            <client-application-name>C</client-application-name>
-        </correlated-client-set>
-        <correlated-client-set>
-            <client-application-name>X</client-application-name>
-            <client-application-name>Y</client-application-name>
-            <client-application-name>Z</client-application-name>
-        </correlated-client-set>
-    </correlation-config>-->
+    <!--  <correlation-config>
+          <correlated-client-set>
+              <client-application-name>A</client-application-name>
+              <client-application-name>B</client-application-name>
+              <client-application-name>C</client-application-name>
+          </correlated-client-set>
+          <correlated-client-set>
+              <client-application-name>X</client-application-name>
+              <client-application-name>Y</client-application-name>
+              <client-application-name>Z</client-application-name>
+          </correlated-client-set>
+      </correlation-config>-->
 
     <detection-points>
-<!--        <detection-point>
-            <category>Input Validation</category>
-            <id>IE1</id>
+
+        <detection-point>
+            <category>Authentication</category>
+            <id>AE1</id>
             <threshold>
                 <count>5</count>
-                <interval unit="seconds">20</interval>
-            </threshold>
-            <responses>
-                <response>
-                    <action>log</action>
-                    <interval unit="minutes">10</interval>
-                </response>
-                <response>
-                    <action>logout</action>
-                </response>
-            </responses>
-        </detection-point>
-        <detection-point>
-            <category>Input Validation</category>
-            <id>IE1</id>
-            <threshold>
-                <count>30</count>
-                <interval unit="minutes">1</interval>
-            </threshold>
-            <responses>
-                <response>
-                    <action>disable</action>
-                    <interval unit="minutes">10</interval>
-                </response>
-                <response>
-                    <action>logout</action>
-                </response>
-            </responses>
-        </detection-point>
-        <detection-point>
-            <category>Input Validation</category>
-            <id>IE2</id>
-            <threshold>
-                <count>6</count>
                 <interval unit="seconds">30</interval>
             </threshold>
             <responses>
@@ -84,12 +51,13 @@
                 </response>
             </responses>
         </detection-point>
+
         <detection-point>
-            <category>Request</category>
-            <id>RE3</id>
+            <category>Authentication</category>
+            <id>AE2</id>
             <threshold>
-                <count>7</count>
-                <interval unit="seconds">40</interval>
+                <count>5</count>
+                <interval unit="seconds">30</interval>
             </threshold>
             <responses>
                 <response>
@@ -101,12 +69,9 @@
                 <response>
                     <action>disableUser</action>
                 </response>
-                <response>
-                    <action>disableComponentForSpecificUser</action>
-                    <interval unit="minutes">33</interval>
-                </response>
             </responses>
-        </detection-point>-->
+        </detection-point>
+
         <detection-point>
             <category>Authentication</category>
             <id>AE3</id>
@@ -126,12 +91,42 @@
                 </response>
             </responses>
         </detection-point>
+
+        <detection-point>
+            <category>Authentication</category>
+            <id>AE12</id>
+            <threshold>
+                <count>5</count>
+                <interval unit="seconds">30</interval>
+            </threshold>
+            <responses>
+                <response>
+                    <action>disableUser</action>
+                </response>
+            </responses>
+        </detection-point>
+
+        <detection-point>
+            <category>Access Control</category>
+            <id>ACE3</id>
+            <threshold>
+                <count>1</count>
+                <interval unit="seconds">1</interval>
+            </threshold>
+            <responses>
+                <response>
+                    <action>log</action>
+                </response>
+            </responses>
+        </detection-point>
+
+
         <detection-point>
             <category>System Trend</category>
             <id>STE1</id>
             <threshold>
-                <count>10</count>
-                <interval unit="seconds">30</interval>
+                <count>1</count>
+                <interval unit="seconds">1</interval>
             </threshold>
             <responses>
                 <response>
@@ -143,8 +138,8 @@
             <category>System Trend</category>
             <id>STE2</id>
             <threshold>
-                <count>10</count>
-                <interval unit="seconds">30</interval>
+                <count>1</count>
+                <interval unit="seconds">1</interval>
             </threshold>
             <responses>
                 <response>
@@ -163,6 +158,20 @@
             <responses>
                 <response>
                     <action>disableUser</action>
+                </response>
+            </responses>
+        </detection-point>
+
+        <detection-point>
+            <category>Request</category>
+            <id>RE2</id>
+            <threshold>
+                <count>1</count>
+                <interval unit="seconds">1</interval>
+            </threshold>
+            <responses>
+                <response>
+                    <action>log</action>
                 </response>
             </responses>
         </detection-point>
