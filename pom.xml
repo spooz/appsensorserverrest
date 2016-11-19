@@ -22,17 +22,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<appsensor.version>2.3.0-SNAPSHOT</appsensor.version>
+		<appsensor.version>2.3.0</appsensor.version>
 	</properties>
-
-
-	<repositories>
-		<repository>
-			<id>sonatype-snapshots</id>
-			<name>Snapshot repository for Sonatype dependencies</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-		</repository>
-	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -60,6 +51,12 @@
 		<dependency>
 			<groupId>org.owasp.appsensor</groupId>
 			<artifactId>appsensor-storage-in-memory</artifactId>
+			<version>${appsensor.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.owasp.appsensor</groupId>
+			<artifactId>appsensor-geolocation-geoip2</artifactId>
 			<version>${appsensor.version}</version>
 		</dependency>
 

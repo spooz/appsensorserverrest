@@ -3,11 +3,11 @@
 
     <client-application-identification-header-name>X-Appsensor-Client-Application-Name2</client-application-identification-header-name>
 
-    <!--  <geolocation enabled="true" databasePath="src/main/resources/GeoLite2-City.mmdb" />-->
+   <geolocation enabled="true" databasePath="src/main/resources/GeoLite2-City.mmdb" />
 
     <client-applications>
         <client-application>
-            <name>clientapp</name>
+            <name>myclientapp</name>
             <roles>
                 <role>ADD_EVENT</role>
                 <role>ADD_ATTACK</role>
@@ -41,14 +41,14 @@
             </threshold>
             <responses>
                 <response>
-                    <action>log</action>
+                    <action>disableIp</action>
                 </response>
-                <response>
+               <!-- <response>
                     <action>logout</action>
                 </response>
                 <response>
                     <action>disableUser</action>
-                </response>
+                </response>-->
             </responses>
         </detection-point>
 
@@ -110,12 +110,12 @@
             <category>Access Control</category>
             <id>ACE3</id>
             <threshold>
-                <count>1</count>
-                <interval unit="seconds">1</interval>
+                <count>5</count>
+                <interval unit="seconds">60</interval>
             </threshold>
             <responses>
                 <response>
-                    <action>log</action>
+                    <action>logout</action>
                 </response>
             </responses>
         </detection-point>
