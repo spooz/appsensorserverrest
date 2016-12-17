@@ -50,7 +50,7 @@
 
 		<dependency>
 			<groupId>org.owasp.appsensor</groupId>
-			<artifactId>appsensor-storage-in-memory</artifactId>
+			<artifactId>appsensor-storage-nosql-mongodb</artifactId>
 			<version>${appsensor.version}</version>
 		</dependency>
 
